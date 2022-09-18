@@ -16,17 +16,17 @@ export const Search = () => {
       <input
         value={text}
         type="text"
-        className="sm:96 w-full h-10 dark:bg-gray-200 border rounded-md shadow-sm outline-none p-6 text-black hover:shadow-lg"
+        className="sm:96 w-full h-10 bg-transparent border dark:border-gray-700 rounded-md shadow-sm outline-none p-6 text-black dark:text-gray-500 hover:shadow-lg"
         placeholder="Search"
         onChange={(e) => setText(e.target.value)}
       />
       {text && (
         <button
           type="button"
-          className="absolute top-1.5 right-4 text-2xl text-gray-500"
+          className="absolute top-3.5 right-4 text-sm text-red-400"
           onClick={(e) => setText("")}
         >
-          x
+          clear
         </button>
       )}
       <Links />

@@ -33,11 +33,11 @@ const Pagination = (props) => {
   return (
     <>
       <div className="flex flex-wrap">
-        <ul className="flex pagination bg-white p-2 shadow-sm rounded-md">
+        <ul className="flex pagination bg-white dark:bg-gray-900 p-2 shadow-sm rounded-md">
           <li key="first-button" className="pagination-item">
             <button
               onClick={onPrevious}
-              className="rounded-sm border border-gray-100 px-3 py-2 hover:bg-gray-100 text-gray-600 no-underline mx-2 text-sm"
+              className="rounded-sm border border-gray-100 dark:border-gray-700 px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 no-underline mx-2 text-sm"
               aria-label="Next"
             >
               <span aria-hidden="true">&laquo;</span>
@@ -54,8 +54,8 @@ const Pagination = (props) => {
             return (
               <li key={pageNumber} className={`pagination-item`}>
                 <button
-                  className={`rounded-sm border border-gray-100 px-3 py-2 hover:bg-gray-200 text-gray-600 ${
-                    currentPage === pageNumber && `bg-gray-200`
+                  className={`rounded-sm border border-gray-100 dark:border-gray-700 px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 ${
+                    currentPage === pageNumber && `bg-gray-200 dark:bg-gray-500 dark:border-gray-500 dark:text-gray-900`
                   }  no-underline mx-2 text-sm`}
                   onClick={() => onPageChange(pageNumber)}
                 >
@@ -67,7 +67,7 @@ const Pagination = (props) => {
           <li key="next-button" className="pagination-item">
             <button
               disabled={currentPage === lastPage}
-              className="rounded-sm border border-gray-100 px-3 py-2 hover:bg-gray-100 text-gray-600 no-underline mx-2 text-sm"
+              className="rounded-sm border border-gray-100 dark:border-gray-700  px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 no-underline mx-2 text-sm"
               onClick={onNext}
               aria-label="Next"
             >
