@@ -13,7 +13,7 @@ export const Navbar = ({ darkTheme, setDarkTheme }) => {
           onClick={() => setDarkTheme(!darkTheme)}
           className="text-md rounded-full px-2 py-1 hover:shadow-lg text-sm dark:text-gray-200"
         >
-          {darkTheme ? "dark": "light"}
+          {darkTheme ? "dark" : "light"}
         </button>
       </div>
       <Search />

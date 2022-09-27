@@ -1,6 +1,12 @@
 import useActions from "hooks/useActions";
 import useQuery from "hooks/useQuery";
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { search } from "services/searchService";
 import { asynchronously } from "utils/asynchronous";
 import SEARCH_ACTIONS from "actions/searchActions";
@@ -19,23 +25,25 @@ export const ResultsContextProvider = ({ children }) => {
   let { processing, dispatch } = useActions([
     { action: SEARCH_ACTIONS.LOAD_RESULTS, status: true },
   ]);
-  const loadResults = async (type) => {
+  const loadResults = useCallback(async (type) => {
     dispatch({
       [SEARCH_ACTIONS.LOAD_RESULTS]: { status: true, error: false, id: null },
     });
-    const [searcherror, response] = await asynchronously(
-      search({ query: getQuery() })
-    );
-    const [jsonerror, data] = await asynchronously(response.json());
+    const [, response] = await asynchronously(search({ query: getQuery() }));
+    const [, data] = await asynchronously(response.json());
     setResults(data.results);
     updatePagination(data.pagination);
     dispatch({
-      [SEARCH_ACTIONS.LOAD_RESULTS]: { status: false, error: false, id: null },
+      [SEARCH_ACTIONS.LOAD_RESULTS]: {
+        status: false,
+        error: false,
+        id: null,
+      },
     });
-  };
+  }, []);
   useEffect(() => {
     loadResults();
-  }, [query]);
+  }, [query, loadResults]);
   return (
     <ResultContext.Provider
       value={{

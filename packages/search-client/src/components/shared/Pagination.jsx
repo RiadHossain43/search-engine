@@ -55,7 +55,8 @@ const Pagination = (props) => {
               <li key={pageNumber} className={`pagination-item`}>
                 <button
                   className={`rounded-sm border border-gray-100 dark:border-gray-700 px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-600 ${
-                    currentPage === pageNumber && `bg-gray-200 dark:bg-gray-500 dark:border-gray-500 dark:text-gray-900`
+                    currentPage === pageNumber &&
+                    `bg-gray-200 dark:bg-gray-500 dark:border-gray-500 dark:text-gray-900`
                   }  no-underline mx-2 text-sm`}
                   onClick={() => onPageChange(pageNumber)}
                 >

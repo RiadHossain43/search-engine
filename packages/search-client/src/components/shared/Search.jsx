@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDebounce } from "use-debounce";
 import { useResultContext } from "../../context/ResultsContextProvider";
-import { Links } from "./Links";
-
 export const Search = () => {
   const [text, setText] = useState("");
   const { handleSearch } = useResultContext();
@@ -12,7 +10,7 @@ export const Search = () => {
   }, [debounceValue]);
 
   return (
-    <div className="relative w-96 sm:ml-48 md:ml-72 sm:-mt-10 mt-3">
+    <div className="relative w-96 sm:ml-48 md:ml-72 sm:-mt-10 mt-3 mb-3">
       <input
         value={text}
         type="text"
@@ -29,7 +27,6 @@ export const Search = () => {
           clear
         </button>
       )}
-      <Links />
     </div>
   );
 };
