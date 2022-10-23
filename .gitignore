@@ -1,3 +1,5 @@
 node_modules/
 packages/**/*node_modules
 packages/search-api/.env
+lerna-debug.log
+package-lock.json

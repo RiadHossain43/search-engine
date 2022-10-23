@@ -1,4 +1,4 @@
-exports.fomatPagination = (data) => {
+exports.formatPagination = (data) => {
   return {
     totalPages: data.totalPages,
     totalResults: data.totalDocs,
