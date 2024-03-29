@@ -25,7 +25,7 @@ export const ResultsContextProvider = ({ children }) => {
   let { processing, dispatch } = useActions([
     { action: SEARCH_ACTIONS.LOAD_RESULTS, status: true },
   ]);
-  const loadResults = useCallback(async (type) => {
+  const loadResults = async (type) => {
     dispatch({
       [SEARCH_ACTIONS.LOAD_RESULTS]: { status: true, error: false, id: null },
     });
@@ -40,10 +40,10 @@ export const ResultsContextProvider = ({ children }) => {
         id: null,
       },
     });
-  }, []);
+  };
   useEffect(() => {
     loadResults();
-  }, [query, loadResults]);
+  }, [query]);
   return (
     <ResultContext.Provider
       value={{

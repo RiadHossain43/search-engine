@@ -1,7 +1,7 @@
 const { StatusCodes, ReasonPhrases } = require("http-status-codes");
 const ErroHandler = require("../services/error/errorHandler");
 const errorHandler = async (err, req, res, next) => {
-  console.log("triggering global error handler");
+  console.log("triggering error handling  middleware");
   const errorHandler = new ErroHandler(err);
   errorHandler.handleError();
   /**

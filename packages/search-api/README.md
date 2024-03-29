@@ -1,1 +1,3 @@
-This is a boilerplate project for testing mongodb search
+# Search
+
+The project emphasizes on implementation of various complex mongodb searching tecchniques

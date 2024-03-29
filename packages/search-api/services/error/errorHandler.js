@@ -7,7 +7,7 @@ class ErroHandler {
     console.info(
       "logging error handler: ******************************************"
     );
-    console.error(this.error);
+    console.log(this.error);
     console.info(
       "*****************************************************************"
     );

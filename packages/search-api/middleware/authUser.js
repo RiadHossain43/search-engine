@@ -15,7 +15,7 @@ exports.authUser = async (req, res, next) => {
       }
     });
   } catch (err) {
-    console.error(err);
+    console.log(err);
     res.status(500);
   }
 };
